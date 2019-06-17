@@ -1,7 +1,7 @@
 # monorepo-parallelism
 Parallelism in a Rush Monorepo on Azure DevOps
 
-## Multiple Jobs
+## Multiple jobs
 Azure DevOps hosted agents can be defined in an [azure-pipelines.yml](https://docs.microsoft.com/en-us/azure/devops/pipelines/yaml-schema?view=azure-devops&tabs=schema) file. A complex pipeline can contain [stages](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/stages?view=azure-devops&tabs=yaml) and [jobs](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/phases?view=azure-devops&tabs=yaml). Stages and jobs run in parallel by default unless dependencies are specified.
 
 **Pros:** 
@@ -19,7 +19,7 @@ Rush bulk commands can be run in parallel. Parallelim adheres to the dependency 
 	- Default hosted agents only have two cores and other resource limitations which, depending on your tests, can actually *slow  down* the process.
 	- The ability to run the tests in parallel will depend a lot on the quality of (properly scoped, deterministic, independent) tests and configuring your tools such as [karma](https://karma-runner.github.io/latest/index.html) and [protractor](https://www.protractortest.org/#/). 
 
-## Work-Arounds
+## Alternatives
 Parallelism is only one of the many ways to speed up your pipelines.
 
 ### Containers
