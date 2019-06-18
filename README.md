@@ -11,7 +11,7 @@ Azure DevOps hosted agents can be defined in an [azure-pipelines.yml](https://do
 * Hosted agents can be [expensive](https://docs.microsoft.com/en-us/azure/devops/pipelines/licensing/concurrent-jobs?view=azure-devops).
 * Jobs do not share resources so we must rebuild the the code or introduce a [blob storage](https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/deploy/azure-file-copy?view=azure-devops), [containers](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/container-phases?view=azure-devops&tabs=yaml), or another cloud solution in order to avoid repeat steps.
 
-## Rush bulk commands
+## Bulk commands
 Rush bulk commands can be run in parallel. Parallelim adheres to the dependency graph and execution can be controlled in relation to a package by using the `-t PROJECT1` (--to) and `-f PROJECT2` (--from) command line parameters.  Out-of-the-box commands, such as `rush build` will run in parallel by default. Custom bulk commands default [`enableParallelism` to false](https://rushjs.io/pages/configs/command_line_json/).
 
 **Pros:** 
@@ -19,7 +19,16 @@ Rush bulk commands can be run in parallel. Parallelim adheres to the dependency 
 
 **Cons:**
 * Default hosted agents only have two cores and other resource limitations which, depending on your tests, can actually *slow  down* the process.
-* The ability to run the tests in parallel will depend a lot on the quality of (properly scoped, deterministic, independent) tests and configuring your tools such as [karma](https://karma-runner.github.io/latest/index.html) and [protractor](https://www.protractortest.org/#/). 
+* The ability to run the tests in parallel will depend a lot on the quality of (properly scoped, deterministic, independent) tests and configuring your tools such as [karma](https://karma-runner.github.io/latest/index.html) and [protractor](https://www.protractortest.org/#/).
+
+## Global commands
+Rush global commands can be used to run a shell script at the global level.
+
+**Pros:** 
+* Centralized configuration settings
+
+**Cons:**
+* Requires specialized configuration to your tooling (ex. karma and protractor) which can be problematic when working with a complex network of packages.
 
 ## Alternatives
 Parallelism is only one of the many ways to speed up your pipelines.
