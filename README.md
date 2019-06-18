@@ -12,7 +12,7 @@ Azure DevOps hosted agents can be defined in an [azure-pipelines.yml](https://do
 * Jobs do not share resources so we must rebuild the the code or introduce a [blob storage](https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/deploy/azure-file-copy?view=azure-devops), [containers](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/container-phases?view=azure-devops&tabs=yaml), or another cloud solution in order to avoid repeat steps.
 
 ## Bulk commands
-Rush bulk commands can be run in parallel. Parallelim adheres to the dependency graph and execution can be controlled in relation to a package by using the `-t PROJECT1` (--to) and `-f PROJECT2` (--from) command line parameters.  Out-of-the-box commands, such as `rush build` will run in parallel by default. Custom bulk commands default [`enableParallelism` to false](https://rushjs.io/pages/configs/command_line_json/).
+Rush bulk commands can be run in parallel. Parallelism adheres to the dependency graph and execution can be controlled in relation to a package by using the `-t PROJECT1` (--to) and `-f PROJECT2` (--from) command line parameters.  Out-of-the-box commands, such as `rush build` will run in parallel by default. Custom bulk commands default [`enableParallelism` to false](https://rushjs.io/pages/configs/command_line_json/).
 
 **Pros:** 
 * Vertically scale by cores on the host machine.
