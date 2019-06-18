@@ -28,7 +28,7 @@ Rush global commands can be used to run a shell script at the global level.
 * Centralized configuration settings
 
 **Cons:**
-* Requires specialized configuration to your tooling (ex. karma and protractor) which can be problematic when working with a complex network of packages.
+* Requires specialized configuration to your tooling (ex. karma and protractor) which can be difficult to scale when working with diverse packages within the monorepo.
 
 ## Alternatives
 Parallelism is only one of the many ways to speed up your pipelines.
