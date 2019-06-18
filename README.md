@@ -5,7 +5,7 @@ Parallelism in a [Rushjs](https://rushjs.io/pages/intro/welcome/) monorepo on [A
 Azure DevOps hosted agents can be defined in an [azure-pipelines.yml](https://docs.microsoft.com/en-us/azure/devops/pipelines/yaml-schema?view=azure-devops&tabs=schema) file. A complex pipeline may contain [stages](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/stages?view=azure-devops&tabs=yaml) and [jobs](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/phases?view=azure-devops&tabs=yaml). Jobs run in parallel by default unless dependencies are specified.
 
 **Pros:** 
-* Theoretically, we can scale horizontally by adding as many machines as we need.
+* Theoretically, we can scale horizontally by adding as many instances of build agents as we need.
 
 **Cons:**
 * Hosted agents can be [expensive](https://docs.microsoft.com/en-us/azure/devops/pipelines/licensing/concurrent-jobs?view=azure-devops).
