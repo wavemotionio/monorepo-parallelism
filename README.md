@@ -22,7 +22,7 @@ Rush bulk commands can be run in parallel. Parallelim adheres to the dependency 
 * The ability to run the tests in parallel will depend a lot on the quality of (properly scoped, deterministic, independent) tests and configuring your tools such as [karma](https://karma-runner.github.io/latest/index.html) and [protractor](https://www.protractortest.org/#/).
 
 ## Global commands
-Rush global commands can be used to run a shell script at the global level.
+Rush global commands can be used to run a shell script at the global level. This could possibly be leveraged well against a composed [storybook-type UI](https://storybook.js.org/).
 
 **Pros:** 
 * Centralized configuration settings
